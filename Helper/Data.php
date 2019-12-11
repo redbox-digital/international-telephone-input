@@ -24,15 +24,15 @@ class Data extends AbstractHelper
     const XML_PATH_PREFERED_COUNTRY = 'general/store_information/country_id';
 
     /**
-     * @return mixed
+     * @return bool
      */
     public function isModuleEnabled()
     {
-        return $this->getConfig(self::XML_PATH_INTERNATIONAL_TELEPHONE_INPUT_MODULE_ENABLED);
+        return !!$this->getConfig(self::XML_PATH_INTERNATIONAL_TELEPHONE_INPUT_MODULE_ENABLED);
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function allowedCountries()
     {
@@ -40,7 +40,7 @@ class Data extends AbstractHelper
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function preferedCountry()
     {
@@ -48,7 +48,7 @@ class Data extends AbstractHelper
     }
 
     /**
-     * @param $configPath
+     * @param string $configPath
      * @return mixed
      */
     protected function getConfig($configPath)
@@ -58,6 +58,7 @@ class Data extends AbstractHelper
 
     /**
      * Prepare telephone field config according to the Magento default config
+     *
      * @param $addressType
      * @param string $method
      * @return array
