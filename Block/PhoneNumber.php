@@ -37,17 +37,17 @@ class PhoneNumber extends Template
     protected $countryInformation;
 
     /**
-     * PhoneNumber constructor.
      * @param Context $context
      * @param Json $jsonHelper
+     * @param CountryInformationAcquirerInterface $countryInformation
+     * @param Data $helper
      */
     public function __construct(
         Context $context,
         Json $jsonHelper,
         CountryInformationAcquirerInterface $countryInformation,
         Data $helper
-    )
-    {
+    ) {
         $this->jsonHelper = $jsonHelper;
         $this->helper = $helper;
         $this->countryInformation = $countryInformation;
